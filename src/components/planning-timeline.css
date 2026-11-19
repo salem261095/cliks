@@ -1,0 +1,66 @@
+.planning-timeline { --planning-line: color-mix(in srgb, var(--ink) 25%, transparent); color: var(--ink); }
+.planning-stage {
+  position: sticky;
+  top: var(--header-height);
+  z-index: 2;
+  background: var(--paper);
+  border-block: 1px solid var(--planning-line);
+  padding-block: .48rem .12rem;
+}
+.editorial-method .planning-stage { background: var(--cinema-white); }
+
+.planning-rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(8.3rem, 1fr);
+  margin: 0;
+  padding: .16rem .28rem .4rem;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline proximity;
+  scrollbar-width: thin;
+  list-style: none;
+}
+.planning-rail li { position: relative; scroll-snap-align: start; }
+.planning-rail li + li::before { content: ""; position: absolute; pointer-events: none; top: 1.15rem; inset-inline-end: 50%; width: 100%; height: 1px; background: var(--planning-line); }
+.planning-rail li:has(> a[data-visited="true"])::before { background: var(--ink); }
+.planning-rail a { display: grid; grid-template-rows: auto 1fr; justify-items: center; align-items: start; gap: .35rem; position: relative; height: 100%; padding: 0 .48rem .3rem; color: inherit; font-size: .9rem; font-weight: 780; line-height: 1.4; text-align: center; }
+.planning-node { display: grid; place-items: center; width: 2.3rem; height: 2.3rem; border-radius: 50%; background: var(--paper); border: 1px solid var(--planning-line); font: 800 .77rem/1 system-ui, sans-serif; transition: color 180ms, background-color 180ms; }
+.planning-rail a[aria-current="step"] .planning-node { background: var(--accent); border-color: var(--ink); }
+.planning-rail a:hover:not([aria-current]) .planning-node { border-color: var(--ink); }
+.planning-rail a:focus-visible { outline-offset: -1px; }
+
+.planning-scene {
+  display: grid;
+  align-items: center;
+  min-height: clamp(10rem, 28svh, 17rem);
+  border-bottom: 1px solid var(--planning-line);
+  scroll-margin-block-start: 5.5rem;
+}
+.planning-panel-content { display: grid; grid-template-columns: minmax(0, 1.14fr) minmax(0, .86fr); align-items: baseline; gap: .8rem clamp(1rem, 5vw, 5rem); padding-block: clamp(.85rem, 3vw, 2.6rem); }
+.planning-label { font-size: .8rem; font-weight: 800; color: var(--muted); margin-bottom: .24rem; }
+.planning-scene h3 { font-size: clamp(1.5rem, 3.55vw, 3.55rem); line-height: 1.24; }
+.planning-panel-content > div:last-child p:last-child { font-size: clamp(1rem, 1.55vw, 1.3rem); }
+.planning-scene[data-active="true"] .planning-label { color: var(--ink); }
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .planning-scene { view-timeline-name: --planning-detail; }
+    .planning-panel-content > div {
+      animation: planning-panel-in linear both;
+      animation-timeline: --planning-detail;
+      animation-range: entry 5% entry 72%;
+    }
+    .planning-panel-content > div:last-child { animation-range: entry 20% entry 90%; }
+  }
+}
+@keyframes planning-panel-in { from { opacity: .68; transform: translateY(.7rem); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 620px) {
+  .planning-rail { grid-auto-columns: minmax(7.8rem, 39%); }
+  .planning-panel-content { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-height: 330px) {
+  .planning-stage { position: static; }
+}

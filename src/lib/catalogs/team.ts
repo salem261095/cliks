@@ -1,0 +1,60 @@
+import type { TeamMember } from '../types';
+
+export const TEAM_MEMBERS: TeamMember[] = [
+  {
+    id: 'ali-jawad',
+    name: 'علي جواد الصالح',
+    role: 'الشريك المؤسس والمدير العام',
+    portrait: '/assets/team/ali-jawad.avif',
+    specialization: 'الإدارة العامة',
+    credentials: [],
+    bio: '',
+    isLeadership: true,
+  },
+  // Fictional profiles for the design review.
+  {
+    id: 'strategy-lead',
+    name: 'نورة الحربي',
+    role: 'مديرة الاستراتيجية',
+    specialization: 'التخطيط والتموضع',
+    credentials: [],
+    bio: '',
+    isLeadership: false,
+  },
+  {
+    id: 'performance-lead',
+    name: 'فهد السالم',
+    role: 'مدير التسويق بالأداء',
+    specialization: 'الحملات والقياس',
+    credentials: [],
+    bio: '',
+    isLeadership: false,
+  },
+  {
+    id: 'creative-lead',
+    name: 'ريم العتيبي',
+    role: 'المديرة الإبداعية',
+    specialization: 'الهوية والإخراج الفني',
+    credentials: [],
+    bio: '',
+    isLeadership: false,
+  },
+  {
+    id: 'digital-lead',
+    name: 'ماجد القحطاني',
+    role: 'مدير المنتجات الرقمية',
+    specialization: 'التجارب الرقمية والبيانات',
+    credentials: [],
+    bio: '',
+    isLeadership: false,
+  },
+  {
+    id: 'content-lead',
+    name: 'سارة الدوسري',
+    role: 'مديرة المحتوى',
+    specialization: 'التحرير والإنتاج',
+    credentials: [],
+    bio: '',
+    isLeadership: false,
+  },
+];

@@ -1,0 +1,66 @@
+@import "./brand-colors.css";
+
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  src: url('/fonts/arabic.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playpen Sans Arabic';
+  src: url('/fonts/playpen-sans-arabic.ttf') format('truetype');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Surfaces */
+  --bg-dark: #0b0f17;
+  --bg-dark-subtle: #111726;
+  --bg-card: #141c2e;
+  --bg-card-hover: #1a253d;
+  --bg-paper: #fbf9f5;
+  --bg-paper-subtle: #f3efe6;
+
+  /* Accent - Brand Yellow */
+  --accent-hover: oklch(84% 0.182 98.111);
+  --accent-light: oklch(94% 0.15 98.111);
+  --accent-glow: oklch(90.5% 0.182 98.111 / 0.2);
+  --accent-border: oklch(90.5% 0.182 98.111 / 0.35);
+
+  /* Text & Inks */
+  --text-primary: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --text-on-light: #0f172a;
+  --text-muted-on-light: #475569;
+
+  /* Borders & Lines */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(255, 255, 255, 0.16);
+  --border-on-light: rgba(15, 23, 42, 0.12);
+
+  /* Fonts */
+  --font-arabic: 'Noto Sans Arabic', system-ui, -apple-system, sans-serif;
+  --font-handwritten: 'Playpen Sans Arabic', cursive;
+
+  /* Editorial Typography Clamps */
+  --type-display: clamp(2.5rem, 1.8rem + 3.8vw, 5.5rem);
+  --type-chapter: clamp(2.25rem, 1.5rem + 3.2vw, 5rem);
+  --type-subtitle: clamp(1.5rem, 1.15rem + 1.05vw, 2.375rem);
+  --type-lead: clamp(1.125rem, 1rem + 0.4vw, 1.5rem);
+  --type-body: clamp(1rem, 0.94rem + 0.2vw, 1.125rem);
+  --type-label: 0.875rem;
+  --type-meta: 0.75rem;
+
+  /* Layout Spacing */
+  --pad-gutter: clamp(20px, 4vw, 40px);
+  --section-space: clamp(75px, 8vw, 140px);
+  --header-height: 80px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}

@@ -1,0 +1,102 @@
+.product-dashboard {
+  --ui-line: color-mix(in srgb, currentColor 13%, transparent);
+  display: block;
+  overflow: clip;
+  border-radius: clamp(.8rem, 1.5vw, 1.4rem);
+  border: 1px solid var(--ui-line);
+  font-size: .9rem;
+  text-align: start;
+}
+
+.studio-dashboard-bar { display: flex; align-items: center; justify-content: space-between; gap: .5rem; padding: .66rem clamp(.7rem, 2vw, 1.4rem); border-bottom: 1px solid var(--ui-line); }
+.studio-product-brand { display: flex; align-items: center; gap: .45rem; font-size: .89rem; font-weight: 900; }
+.studio-product-icon { display: grid; place-items: center; width: 1.55rem; height: 1.55rem; border-radius: .45rem; background: var(--accent); color: var(--ink); }
+.studio-product-icon svg { width: .95rem; height: .95rem; }
+.studio-dashboard-preview { font-size: .68rem; line-height: 1.45; padding: .13rem .39rem; border-radius: .28rem; border: 1px solid var(--ui-line); }
+.product-dashboard :is(h3, h4) { font-weight: 850; line-height: 1.3; }
+.product-dashboard h3 { font-size: clamp(1.48rem, 3vw, 2.65rem); }
+.product-dashboard h4 { font-size: .9rem; }
+
+.madar-dashboard { --madar-ring-track: color-mix(in srgb, var(--ink) 16%, transparent); color: var(--ink); background: #f5f4ed; box-shadow: 0 1.4rem 3rem #0002; }
+.madar-dashboard .studio-dashboard-bar { background: var(--paper); }
+.madar-workspace, .bi-workspace { padding: clamp(.8rem, 2.1vw, 1.6rem); }
+.madar-intro p, .bi-heading p { font-size: .78rem; }
+.madar-intro p:first-child { margin-bottom: .24rem; }
+.madar-intro p:last-child { margin-top: .23rem; color: var(--muted); }
+.madar-layout { display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); gap: clamp(.55rem, 1.55vw, 1.05rem); margin-top: .85rem; }
+.madar-progress, .madar-tasks, .bi-trend, .bi-channels { border-radius: .7rem; padding: clamp(.62rem, 1.45vw, 1.05rem); min-width: 0; }
+.madar-progress { background: var(--accent); display: grid; align-content: start; gap: .35rem; }
+.madar-progress-label, .madar-task-heading h4, .bi-heading p { display: flex; align-items: center; gap: .3rem; }
+.madar-progress-label { font-size: .78rem; font-weight: 800; }
+.madar-progress-label svg, .madar-task-heading svg, .bi-heading svg { width: .91rem; height: .91rem; flex-shrink: 0; }
+@property --madar-progress { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
+.madar-ring { background: conic-gradient(var(--ink) var(--madar-progress), var(--madar-ring-track) 0); transition: --madar-progress 420ms var(--ease); width: min(75%, 6.65rem); min-width: 3.65rem; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; margin: .55rem auto; }
+.madar-ring bdi { display: grid; place-items: center; width: 78%; aspect-ratio: 1; border-radius: 50%; background: var(--accent); font-size: clamp(.88rem, 1.8vw, 1.45rem); font-weight: 900; }
+.madar-progress p { font-size: .75rem; font-weight: 800; }
+.madar-progress > span:last-child { font-size: .67rem; }
+.madar-tasks { border: 1px solid var(--ui-line); background: var(--paper); }
+.madar-task-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem; margin-bottom: .24rem; }
+.madar-task-heading button { border: 1px solid var(--ui-line); border-radius: .3rem; background: transparent; color: inherit; padding: .12rem .3rem; font-size: .67rem; }
+.madar-task-heading button[aria-pressed="true"] { background: var(--accent); }
+.madar-tasks ul, .bi-channels ul { list-style: none; margin: 0; padding: 0; }
+.madar-tasks li, .bi-channels li { border-top: 1px solid var(--ui-line); }
+.madar-tasks li button { display: flex; align-items: center; gap: .45rem; width: 100%; text-align: start; padding: .36rem 0; color: inherit; background: transparent; border: 0; }
+.madar-tasks li button:hover { color: var(--muted); }
+.madar-checkbox { display: grid; place-items: center; width: .95rem; height: .95rem; border: 1px solid var(--ui-line); border-radius: .24rem; flex-shrink: 0; }
+.madar-tasks button[aria-pressed="true"] .madar-checkbox { background: var(--accent); border-color: transparent; }
+.madar-checkbox svg { width: .7rem; height: .7rem; }
+.madar-task-name { font-size: .77rem; line-height: 1.35; }
+.madar-task-name small { display: block; color: var(--muted); margin-top: .12rem; }
+.madar-empty { font-size: .79rem; padding-block: .55rem; }
+
+.bi-dashboard { color: var(--paper); background: var(--bg-indigo); box-shadow: 0 1.4rem 3rem #0003; }
+.bi-dashboard .studio-dashboard-bar { background: color-mix(in srgb, var(--ink) 28%, var(--bg-indigo)); }
+.bi-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: .45rem .7rem; margin-bottom: .85rem; }
+.bi-heading p { color: var(--paper); opacity: .82; margin-bottom: .25rem; }
+.bi-periods { display: flex; gap: .15rem; padding: .15rem; border-radius: .4rem; border: 1px solid var(--ui-line); }
+.bi-periods button { border: 0; background: transparent; color: inherit; font-size: .73rem; padding: .22rem .5rem; border-radius: .25rem; min-height: 1.65rem; }
+.bi-periods button[aria-pressed="true"] { background: var(--accent); color: var(--ink); }
+.bi-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .4rem; }
+.bi-metrics > div, .bi-trend, .bi-channels { background: color-mix(in srgb, var(--paper) 5%, var(--bg-indigo)); border: 1px solid var(--ui-line); }
+.bi-metrics > div { border-radius: .5rem; padding: .43rem clamp(.27rem, 1vw, .72rem); }
+.bi-metrics dt { font-size: .68rem; opacity: .8; }
+.bi-metrics dd { font: 800 clamp(.92rem, 1.85vw, 1.55rem)/1.55 system-ui, sans-serif; }
+.bi-metrics small { font-size: .62rem; }
+.bi-report { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, .7fr); gap: .5rem; margin-top: .5rem; }
+.bi-panel-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .25rem; }
+.bi-panel-heading > span { display: inline-flex; align-items: center; gap: .22rem; font-size: .65rem; opacity: .85; }
+.bi-panel-heading svg { width: .62rem; height: .62rem; color: var(--accent); }
+.bi-chart { position: relative; aspect-ratio: 3.35; margin: .6rem .16rem .25rem; background: repeating-linear-gradient(to top, var(--ui-line) 0 1px, transparent 1px 25%); }
+.bi-chart-series { position: absolute; inset: 0; }
+.bi-chart-area { position: absolute; inset: 0; clip-path: var(--bi-area); background: linear-gradient(to top, transparent, color-mix(in srgb, var(--accent) 33%, transparent)); }
+.bi-chart i { position: absolute; left: var(--bi-segment-x); top: var(--bi-segment-y); width: var(--bi-segment-width); height: 2px; transform: rotate(var(--bi-segment-angle)); background: var(--accent); transform-origin: left center; }
+.bi-chart-dot { position: absolute; right: -.2rem; margin-top: -.14rem; width: .42rem; height: .42rem; background: var(--accent); border-radius: 50%; }
+.bi-axis { display: flex; justify-content: space-between; font-size: .62rem; opacity: .8; }
+.bi-channels h4 { margin-bottom: .35rem; }
+.bi-channels li { padding-block: .28rem; }
+.bi-channels li > span { display: flex; justify-content: space-between; gap: .25rem; font: 650 .63rem/1.4 system-ui, sans-serif; }
+.bi-channels li > div { height: 2px; background: var(--ui-line); margin-top: .22rem; }
+.bi-channels li > div > span { display: block; height: 100%; background: var(--accent); transform: scaleX(var(--bi-channel-share)); transform-origin: right; transition: transform 380ms var(--ease); }
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .product-dashboard { view-timeline-name: --dashboard-entry; }
+    .product-dashboard [data-dashboard-part] { animation: dashboard-part-in linear both; animation-timeline: --dashboard-entry; animation-range: entry var(--dashboard-start, 0%) entry var(--dashboard-end, 40%); }
+    .product-dashboard [data-dashboard-part="second"] { --dashboard-start: 16%; --dashboard-end: 57%; }
+    .product-dashboard [data-dashboard-part="third"] { --dashboard-start: 33%; --dashboard-end: 76%; }
+    .product-dashboard [data-dashboard-part="fourth"] { --dashboard-start: 45%; --dashboard-end: 87%; }
+    .product-dashboard [data-dashboard-part]:focus-within { animation: none; }
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bi-chart-series { animation: bi-chart-draw 460ms var(--ease) both; }
+}
+@keyframes bi-chart-draw { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 -.3rem 0 0); } }
+@keyframes dashboard-part-in { from { opacity: .3; transform: translateY(.8rem) scale(.98); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 440px) {
+  .madar-layout { grid-template-columns: minmax(0, 1fr); }
+  .madar-progress { grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+  .madar-ring { grid-column: 2; grid-row: 1 / span 3; width: 3.75rem; margin: 0; }
+  .bi-report { grid-template-columns: minmax(0, 1fr); }
+}
